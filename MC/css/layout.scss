@@ -1,0 +1,458 @@
+//font declarations
+
+//Nunito Sans
+@font-face {
+    font-family: "NunitoSans";
+    src: url("../fonts/NunitoSans-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    src: url("../fonts/NunitoSans-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    src: url("../fonts/NunitoSans-Bold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    src: url("../fonts/NunitoSans-ExtraBold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    src: url("../fonts/NunitoSans-SemiBoldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    src: url("../fonts/NunitoSans-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+//Roboto
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-MediumItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+}
+
+//variable declarations
+$Roboto : "Roboto";
+$NunitoSans : "NunitoSans";
+$text : #222222;
+$lightText : #707070;
+$yellow : #FECB3E;
+
+//general tag styling
+body {
+    font-family: $NunitoSans, sans-serif;
+    color: $text;
+    margin: 0;
+    display: block;
+    box-sizing: border-box;
+    height: calc(100vh + 200px);
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: calc(24em/16 );
+}
+
+h3 {
+    font-size: calc(20em/16 );
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.headline {
+    font-size: calc(14em/16 );
+    font-weight: 700;
+}
+
+.title {
+    font-size: calc(12em/16 );
+    font-weight: 700;
+}
+
+.subheading {
+    font-size: calc(12em/16 );
+    font-weight: normal;
+    color: $lightText;
+}
+
+.title-body {
+    font-family: $Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+p,
+a {
+    font-family: $Roboto, sans-serif;
+    font-weight: normal;
+    color: $lightText;
+    font-size: calc(12/16 em);
+}
+
+a.active {
+    color: $text;
+}
+
+.title-label {
+    font-family: $Roboto, sans-serif;
+    font-weight: 700;
+    color: $text;
+    font-size: 11px;
+}
+
+.label,
+label {
+    font-family: $Roboto, sans-serif;
+    font-weight: normal;
+    color: $text;
+    font-size: 11px;
+}
+
+//reusable classes
+.wrap{
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: 120px;
+}
+
+.container {
+    box-sizing: border-box;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+} 
+ 
+body.no_scroll .laydim {
+    cursor: pointer;
+  }
+
+.laydim {
+    background: #000;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.slide_layer {
+    z-index: 99;
+    width: 100%;
+    position: fixed;
+    background: #F1F2F4;
+    bottom: 0;
+    .content{
+        position: relative;
+        padding: 10px 15px;
+        overflow-y: auto;
+        padding-bottom: 0;
+        
+    }   
+}
+
+//components styling
+
+//main banner-styling
+#main-banner-section {
+    width: 100%;
+    #main-banner {
+        
+        .slick-track{
+            display: flex;
+            align-items: center;
+        }
+        
+        li {
+            display: inline-block;
+            margin-right: auto;
+            margin-left: auto;
+            a {
+                display: block;
+                img {
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 6px;
+                    width: 100%;
+                }
+            }
+            
+        }
+        .slick-center{
+            transition: height 0.7s ease;
+            padding: 15px 0;
+            a{
+                height: 120px;
+            }
+        }
+    }
+}
+
+//product item styling
+.prd-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    li{
+        a{
+            text-decoration: none;
+            display: block;
+            .prd-img{
+                img{
+                    border-radius: 10px;
+                    max-width: 100%;
+                }
+            }
+            .prd-desc{
+                p{
+                    color: $text;
+                    font-size: calc(12em /16 );
+                    line-height: 16px;
+                }
+            }
+            .prd-price-area{
+                display: flex;
+                align-items: center;
+                p{
+                    margin: 0;
+                }
+                .prd-price{
+                    .old-price{
+                        font-family: $Roboto;
+                        color: $lightText;
+                        font-size: calc(11em/16);
+                        font-style: italic;
+                        text-decoration: line-through;
+                    }
+                    .price{
+                        font-family: $NunitoSans;
+                        font-weight: 700;
+                        font-size: calc(12em/16);
+                        color: #FE3E4C;
+                    }
+                }
+                .prd-discount{
+                    background-color: $yellow;
+                    padding: 4px 6px;
+                    border-radius: 10px;
+                    margin-left: auto;
+                    font-size: calc(11em/16);
+                    color: $text;
+                    font-family: $Roboto;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+//bottom navigation styling
+.bottom-nav {
+    width: 100%;
+    z-index: 1;
+    background: white;
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 60px 1fr 1fr;
+    text-align: center;
+    box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+
+    a {
+        text-decoration: none;
+        font-size: 12px;
+        .icon {
+            height: 18px;
+            width: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 5px;
+            background-size: contain;
+
+            &.account {
+                background-image: url(../icons/bottom-nav/account-icon.svg);
+            }
+
+            &.home {
+                background-image: url(../icons/bottom-nav/home-icon.svg);
+            }
+
+            &.cart {
+                background-image: url(../icons/bottom-nav/cart-icon.svg);
+            }
+
+            &.category {
+                background-image: url(../icons/bottom-nav/category-icon.svg);
+            }
+        }
+
+        &.active,
+        &:hover {
+            .icon {
+                &.account {
+                    background-image: url(../icons/bottom-nav/account-icon-active.svg);
+                }
+
+                &.home {
+                    background-image: url(../icons/bottom-nav/home-icon-active.svg);
+                }
+
+                &.cart {
+                    background-image: url(../icons/bottom-nav/cart-icon-active.svg);
+                }
+
+                &.category {
+                    background-image: url(../icons/bottom-nav/category-icon-active.svg);
+                }
+            }
+        }
+    }
+
+    button {
+        border: 0;
+        background-image: linear-gradient(to bottom, #FEE43E, #FE9E3E);
+        border-radius: 15px;
+        height: 60px;
+        margin-top: -35px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+#bottom-nav-slide{
+    #mall-in-mall-menu{
+        height: 70px;
+        .slick-track{
+            display: flex;
+            align-items: center;
+        }
+        li{
+            
+            a{
+                display: block;
+                margin: 0 10px;
+                img{
+                    width: auto;
+                    height: 60px;
+                    border-radius: 15px;
+                }
+            }
+            
+        }
+        .slick-current{
+            a{
+                img{
+                    transition: height 0.7s ease;
+
+                    height: 75px;
+                    border: 5px solid white;
+                    
+                }
+            }
+        }
+    }
+    .title_section{
+        
+        width: 100vw;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+        padding: 20px 0;
+        text-align: center;
+        background: white;
+        font-weight: 600;
+    }
+}
+
