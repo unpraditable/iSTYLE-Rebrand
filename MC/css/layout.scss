@@ -112,7 +112,7 @@ h1 {
 }
 
 h2 {
-    font-size: calc(20em/16);
+    font-size: 1em;
 }
 
 h3 {
@@ -189,6 +189,10 @@ section {
     box-sizing: border-box;
     width: 100%;
     padding-bottom: 120px;
+}
+
+.img-responsive{
+    max-width: 100%;
 }
 
 .container {
@@ -369,14 +373,18 @@ body.no_scroll .laydim {
 //main menu styling
 #main-menu {
     .main-menu-items {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-gap: 10px;
-
+        // display: grid;
+        // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        // grid-gap: 10px;
+        @media only screen and(min-width: 768px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-gap: 10px;
+        }
         li {
             display: flex;
             justify-content: center;
-
+            margin-right: 10px;
             img {
                 max-width: 100%;
             }
@@ -391,31 +399,16 @@ body.no_scroll .laydim {
 }
 
 //bank discounts item styling
-.bank-discounts-list {
+.promo-partner-list {
     li {
+        width: 130px;
+        margin-right: 10px;
         a {
             text-decoration: none;
         }
-
-        border-radius: 10px;
-        width: 120px;
-        background-color: #1A4C93;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        margin-right: 15px;
-        padding: 15px;
-
-        h3 {
-            color: white;
-            font-family: $NunitoSans;
-            font-weight: 700;
-            font-size: 24px;
-            margin: 0;
-        }
-
-        p {
-            color: white;
-            font-size: 7px;
-            margin: 0;
+        img{
+            max-width: 100%;
+            border-radius: 10px;
         }
     }
 }
@@ -562,6 +555,34 @@ body.no_scroll .laydim {
                     &.active {
                         background-image: url(../icons/svg/fav-active.svg);
                     }
+                }
+            }
+
+            .prd-icons{
+                display: flex;
+                align-items: center;
+                height: 30px;
+                .icon{
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    display: inline-block;
+                }
+                .voucher{
+                    background-image: url(../icons/svg/voucher.svg);
+                    height: 15px;
+                    width: 19px;
+                    margin-right: 5px;
+                }
+                .cashback{
+                    background-image: url(../icons/svg/cashback.svg);
+                    height: 16px;
+                    width: 16px;
+                }
+                .free-delivery{
+                    background-image: url(../icons/svg/free-shipping.svg);
+                    height: 13px;
+                    width: 19px;
+                    margin-left: auto;
                 }
             }
         }

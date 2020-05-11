@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.385" height="15.385" viewBox="0 0 15.385 15.385">
+  <g id="Group_949" data-name="Group 949" transform="translate(0.033 0)">
+    <g id="Component_2_1" data-name="Component 2 – 1" transform="translate(-0.033 0)">
+      <g id="Ellipse_7" data-name="Ellipse 7" transform="translate(0.699 0.202)" fill="#fff" stroke="#ffd19a" stroke-width="2">
+        <ellipse cx="7.343" cy="7.592" rx="7.343" ry="7.592" stroke="none"/>
+        <ellipse cx="7.343" cy="7.592" rx="6.343" ry="6.592" fill="none"/>
+      </g>
+      <ellipse id="Ellipse_9" data-name="Ellipse 9" cx="2.797" cy="3.147" rx="2.797" ry="3.147" transform="translate(0 2.219)" fill="#fff"/>
+      <path id="Path_1474" data-name="Path 1474" d="M1.685.352A.7.7,0,0,1,2.9.352L4.492,3.139a.7.7,0,0,1-.607,1.046H.7A.7.7,0,0,1,.093,3.139Z" transform="translate(4.136 6.153) rotate(-140)" fill="#ffd19a"/>
+      <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="1.224" cy="1.224" rx="1.224" ry="1.224" transform="translate(0.5 6.755)" fill="#ffd19a"/>
+      <text id="Rp" transform="translate(3.8 9.954)" fill="#ffd19a" font-size="7" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">Rp</tspan></text>
+    </g>
+  </g>
+</svg>
