@@ -179,7 +179,7 @@ label {
 }
 
 section {
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 //reusable classes
@@ -191,8 +191,12 @@ section {
     padding-bottom: 120px;
 }
 
-.img-responsive{
+.img-responsive {
     max-width: 100%;
+}
+
+.centered {
+    text-align: center;
 }
 
 .container {
@@ -203,30 +207,30 @@ section {
     margin-left: auto;
 }
 
-@media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
-}
+// @media (min-width: 768px) {
+//     .container {
+//         width: 750px;
+//     }
+// }
 
-@media (min-width: 992px) {
-    .container {
-        width: 970px;
-    }
-}
+// @media (min-width: 992px) {
+//     .container {
+//         width: 970px;
+//     }
+// }
 
-@media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-    }
-}
+// @media (min-width: 1200px) {
+//     .container {
+//         width: 1170px;
+//     }
+// }
 
 .list-unstyled {
     list-style: none;
     padding: 0;
 }
 
-body.no_scroll .laydim {
+body.no-scroll .laydim {
     cursor: pointer;
 }
 
@@ -239,6 +243,10 @@ body.no_scroll .laydim {
     bottom: 0;
     right: 0;
     z-index: 10;
+}
+
+.no-scroll{
+    overflow: hidden;
 }
 
 .slide_layer {
@@ -261,6 +269,14 @@ body.no_scroll .laydim {
     display: flex;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    padding-left: 15px;
+
+    &:after {
+        min-width: 1px;
+        content: "";
+        display: block;
+        position: relative;
+    }
 
     &::-webkit-scrollbar {
         display: none;
@@ -269,6 +285,24 @@ body.no_scroll .laydim {
     li {
         flex: 0 0 auto;
     }
+}
+
+//modal styling
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: calc(50vh);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 50%;
+  transform: translateY(-50%);
 }
 
 //components styling
@@ -365,6 +399,9 @@ body.no_scroll .laydim {
             img {
                 border-top-left-radius: 8px;
                 border-top-right-radius: 8px;
+                width: 100%;
+                height: 100px;
+                object-fit: cover;
             }
         }
     }
@@ -373,6 +410,7 @@ body.no_scroll .laydim {
 //main menu styling
 #main-menu {
     .main-menu-items {
+
         // display: grid;
         // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         // grid-gap: 10px;
@@ -381,10 +419,12 @@ body.no_scroll .laydim {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
             grid-gap: 10px;
         }
+
         li {
             display: flex;
             justify-content: center;
             margin-right: 10px;
+
             img {
                 max-width: 100%;
             }
@@ -403,10 +443,12 @@ body.no_scroll .laydim {
     li {
         width: 130px;
         margin-right: 10px;
+
         a {
             text-decoration: none;
         }
-        img{
+
+        img {
             max-width: 100%;
             border-radius: 10px;
         }
@@ -442,9 +484,12 @@ body.no_scroll .laydim {
             display: block;
 
             .prd-img {
+                min-height: 133px;
+
                 img {
                     border-radius: 10px;
                     max-width: 100%;
+                    border: 1px solid #E5E5E5;
                 }
             }
 
@@ -481,7 +526,11 @@ body.no_scroll .laydim {
                 }
 
                 .prd-price {
+                    position: relative;
+
                     .old-price {
+                        position: absolute;
+                        top: 0;
                         font-family: $Roboto;
                         color: $lightText;
                         font-size: calc(11em/16);
@@ -490,6 +539,7 @@ body.no_scroll .laydim {
                     }
 
                     .price {
+                        padding-top: 12px;
                         font-family: $NunitoSans;
                         font-weight: 700;
                         font-size: calc(12em/16);
@@ -558,27 +608,31 @@ body.no_scroll .laydim {
                 }
             }
 
-            .prd-icons{
+            .prd-icons {
                 display: flex;
                 align-items: center;
                 height: 30px;
-                .icon{
+
+                .icon {
                     background-repeat: no-repeat;
                     background-size: contain;
                     display: inline-block;
                 }
-                .voucher{
+
+                .voucher {
                     background-image: url(../icons/svg/voucher.svg);
                     height: 15px;
                     width: 19px;
                     margin-right: 5px;
                 }
-                .cashback{
+
+                .cashback {
                     background-image: url(../icons/svg/cashback.svg);
                     height: 16px;
                     width: 16px;
                 }
-                .free-delivery{
+
+                .free-delivery {
                     background-image: url(../icons/svg/free-shipping.svg);
                     height: 13px;
                     width: 19px;
@@ -590,6 +644,230 @@ body.no_scroll .laydim {
 
     @media only screen and (min-width: 768px) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+//navigation tab styling
+.nav-tab {
+    li {
+        margin-right: 10px;
+
+        a {
+            box-sizing: border-box;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: block;
+            height: 36px;
+            width: 100px;
+            border-radius: 20px;
+            border: 1px solid #DDDDDD;
+            text-align: center;
+            line-height: 36px;
+            color: #222222;
+            font-weight: 600;
+            font-family: $Roboto;
+            font-size: 14px;
+        }
+
+        &.active {
+            a {
+                color: white;
+                border: 0;
+                background: transparent linear-gradient(245deg, #FECB3E 0%, #FE9E3E 100%) 0% 0% no-repeat padding-box;
+            }
+        }
+    }
+}
+
+//article carousel styling
+.articles {
+    li {
+        width: 230px;
+        margin-right: 10px;
+
+        .article-img-container {
+            min-height: 130px;
+
+            img {
+                border-radius: 10px;
+                width: 100%;
+                object-fit: cover;
+                height: 130px;
+            }
+        }
+
+        .vid-article {
+            .article-img-container {
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    left: calc(50% - (56px/2));
+                    top: calc(50% - (39px/2));
+                    background-image: url(../images/play-button.png);
+                    width: 56px;
+                    height: 39px;
+                    background-size: contain;
+                    display: inline-block;
+                    content: "";
+                }
+            }
+        }
+
+        .article-desc {
+            p {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                color: $text;
+                font-size: 12px;
+                margin: 10px 0 0;
+            }
+        }
+    }
+}
+
+//special product section styling
+.spc-product-section {
+    padding: 15px 0;
+}
+
+//highlighted product item styling
+.highlighted-prd-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+
+    &.carousel {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        li {
+            flex: 0 0 auto;
+            width: calc(50% - 20px);
+            margin-right: 15px;
+
+            @media only screen and (min-width: 768px) {
+                width: calc(25% - 30px);
+            }
+        }
+    }
+
+    li {
+        background: white;
+        border-radius: 10px;
+        padding-bottom: 10px;
+
+        a {
+            text-decoration: none;
+            display: block;
+            position: relative;
+
+            .prd-discount {
+                position: absolute;
+                top: 7px;
+                left: 5px;
+                background-color: $yellow;
+                border-radius: 100%;
+                height: 36px;
+                width: 36px;
+                font-size: 12px;
+
+                p {
+                    margin: 0;
+                    color: $text;
+                    font-weight: 700;
+                    text-align: center;
+                    line-height: 36px;
+                }
+            }
+
+            .prd-img {
+                min-height: 133px;
+
+                img {
+                    border-radius: 10px;
+                    max-width: 100%;
+                }
+            }
+
+            .prd-desc {
+                padding: 0 10px;
+
+                p {
+                    color: $text;
+                    font-size: calc(12em /16);
+                    line-height: 16px;
+                }
+
+                .prd-name {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    height: 32px;
+                    margin: 0;
+                }
+
+                .brand-name {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    height: 16px;
+                    margin: 5px 0;
+                }
+            }
+
+            .prd-price-area {
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                margin: 5px 0;
+
+                p {
+                    margin: 0;
+                }
+
+                .prd-price {
+                    position: relative;
+
+                    .old-price {
+                        position: absolute;
+                        top: 0;
+                        font-family: $Roboto;
+                        color: $lightText;
+                        font-size: calc(11em/16);
+                        font-style: italic;
+                        text-decoration: line-through;
+                    }
+
+                    .price {
+                        padding-top: 12px;
+                        font-family: $NunitoSans;
+                        font-weight: 700;
+                        font-size: calc(12em/16);
+                        color: $red;
+                    }
+                }
+
+                .prd-discount {
+                    background-color: $yellow;
+                    padding: 4px 6px;
+                    border-radius: 10px;
+                    margin-left: auto;
+                    font-size: calc(11em/16);
+                    color: $text;
+                    font-family: $Roboto;
+                    font-weight: bold;
+                }
+            }
+        }
     }
 }
 
