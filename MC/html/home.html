@@ -10,40 +10,51 @@
 </head>
 
 <body>
-    <header>
 
-    </header>
     <div class="wrap">
-        <!-- <section id="main-banner-section">
+        <header id="main-header">
+            <nav class="nav-header">
+                <div class="header-search-wrapper">
+                    <i class="search-icon"></i>
+                    <input id="istyle-search" class="search" type="text" name="search" autocomplete="off"/>
+                </div>
+                <div class="icons-wrapper">
+                    <span class="btn-wishlist"></span>
+                    <span class="btn-notification"></span>
+                </div>
+            </nav>
+            
+        </header>
+        <section id="main-banner-section" class="header-space">
             <ul id="main-banner" class="list-unstyled">
-                <li>
+                <li class="banner">
                     <a href="#">
                         <img src="../images/Main Banner@2x.png" alt="Billboard" />
                     </a>
                 </li>
-                <li>
+                <li class="banner">
                     <a href="#">
                         <img src="../images/Main Banner@2x.png" alt="Billboard" />
                     </a>
                 </li>
-                <li>
+                <li class="banner">
                     <a href="#">
                         <img src="../images/Main Banner@2x.png" alt="Billboard" />
                     </a>
                 </li>
-                <li>
+                <li class="banner">
                     <a href="#">
                         <img src="../images/Main Banner@2x.png" alt="Billboard" />
                     </a>
                 </li>
-                <li>
+                <li class="banner">
                     <a href="#">
                         <img src="../images/Main Banner@2x.png" alt="Billboard" />
                     </a>
                 </li>
             </ul>
 
-        </section> -->
+        </section>
 
         <section id="tactical-banner-section">
             <div class="container centered">
@@ -1269,6 +1280,8 @@
 
             <section class="title_section">
                 iSTYLE
+                <div class="chevron-bottom">
+                </div>
             </section>
 
         </div>
@@ -1306,7 +1319,14 @@
             $('#mall-in-mall-menu').slick('setPosition');
         }
 
+        $(document).on('click', '.title_section', function () {
+            $('.laydim').remove();
+            $('html,body').removeClass('no-scroll');
 
+            if ($('.poplay_type2_1').length) {
+                popup_Layer_close3('bottom-nav-slide');
+            }
+        });
 
         function popup_Layer_close3(el) {
             var temp = $('#' + el);
@@ -1323,11 +1343,12 @@
                 speed: 700,
                 infinite: true,
                 swipe: true,
+                autoplay: true,
                 //  infinite: true,
                 swipeToSlide: true,
                 centerMode: true,
-                variableWidth: true,
-                variableHeight: true,
+                slidesToShow: 1,
+                centerPadding: "6%"
             });
 
             $('#brand-mall-menu').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
