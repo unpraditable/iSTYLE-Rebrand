@@ -348,11 +348,52 @@ body.no-scroll .laydim {
                 outline: none;
             }
 
-            &#istyle-search {
-                background-image: url(../icons/iStyle\ Logo@2x.png);
-                background-repeat: no-repeat;
-                background-size: 43px 17px;
-                height: 16px;
+            &#istyle-search:placeholder-shown {
+                &:placeholder-shown{
+                    background-image: url(../icons/iStyle\ Logo@2x.png);
+                    background-repeat: no-repeat;
+                    background-size: 43px 17px;
+                    height: 16px;
+                    &::-webkit-input-placeholder {
+                        /* WebKit browsers */
+                         color: transparent;
+                    }
+                     &:-moz-placeholder {
+                        /* Mozilla Firefox 4 to 18 */
+                         color: transparent;
+                    }
+                     &::-moz-placeholder {
+                        /* Mozilla Firefox 19+ */
+                         color: transparent;
+                    }
+                     &:-ms-input-placeholder {
+                        /* Internet Explorer 10+ */
+                         color: transparent;
+                    }
+                }
+
+                &:focus{
+                    &::-webkit-input-placeholder {
+                        /* WebKit browsers */
+                         color: $lightText;
+                    }
+                     &:-moz-placeholder {
+                        /* Mozilla Firefox 4 to 18 */
+                        color: $lightText;
+                    }
+                     &::-moz-placeholder {
+                        /* Mozilla Firefox 19+ */
+                        color: $lightText;
+                    }
+                     &:-ms-input-placeholder {
+                        /* Internet Explorer 10+ */
+                        color: $lightText;
+                    }
+                }
+                
+                &:focus,&:not(:placeholder-shown){
+                    background-image: none;
+                }
             }
         }
 

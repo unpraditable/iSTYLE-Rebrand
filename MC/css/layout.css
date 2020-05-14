@@ -242,11 +242,37 @@ body.no-scroll .laydim {
       background: transparent; }
       #main-header .header-search-wrapper .search:focus {
         outline: none; }
-      #main-header .header-search-wrapper .search#istyle-search {
+      #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:placeholder-shown {
         background-image: url(../icons/iStyle\ Logo@2x.png);
         background-repeat: no-repeat;
         background-size: 43px 17px;
         height: 16px; }
+        #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:placeholder-shown::-webkit-input-placeholder {
+          /* WebKit browsers */
+          color: transparent; }
+        #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:placeholder-shown:-moz-placeholder {
+          /* Mozilla Firefox 4 to 18 */
+          color: transparent; }
+        #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:placeholder-shown::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          color: transparent; }
+        #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:placeholder-shown:-ms-input-placeholder {
+          /* Internet Explorer 10+ */
+          color: transparent; }
+      #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:focus::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: #707070; }
+      #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:focus:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #707070; }
+      #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:focus::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #707070; }
+      #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:focus:-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: #707070; }
+      #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:focus, #main-header .header-search-wrapper .search#istyle-search:placeholder-shown:not(:placeholder-shown) {
+        background-image: none; }
     #main-header .header-search-wrapper .search-icon {
       background: url(../icons/svg/search.svg);
       display: inline-block;
