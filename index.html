@@ -1121,17 +1121,7 @@
                     popup_Layer_close3(el);
                 }
             });
-            $('#mall-in-mall-menu').slick({
-                dots: true,
-                arrows: false,
-                speed: 700,
-                centerMode: true,
-                variableWidth: true,
-                swipe: true,
-                infinite: true,
-                swipeToSlide: true,
-                variableHeight: true
-            });
+            
         }
 
         function popup_Layer_close3(el) {
@@ -1151,6 +1141,19 @@
                 //  infinite: true,
                 swipeToSlide: true,
 
+            });
+
+            $('#mall-in-mall-menu').slick({
+                dots: true,
+                arrows: false,
+                centerPadding: 0,
+                speed: 700,
+                centerMode: true,
+                variableWidth: true,
+                swipe: true,
+                infinite: true,
+                swipeToSlide: true,
+                variableHeight: true
             });
         })
 
