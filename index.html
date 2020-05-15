@@ -10,40 +10,52 @@
 </head>
 
 <body>
-    <header>
 
-    </header>
     <div class="wrap">
-        <!-- <section id="main-banner-section">
+        <header id="main-header" class="scrolled">
+            <nav class="nav-header">
+                <div class="header-search-wrapper">
+                    <i class="search-icon"></i>
+                    <input id="istyle-search" class="search" type="text" name="search" autocomplete="off"
+                        placeholder="Mau belanja apa di iStyle?" />
+                </div>
+                <div class="icons-wrapper">
+                    <span class="btn-wishlist"></span>
+                    <span class="btn-notification"></span>
+                </div>
+            </nav>
+
+        </header>
+        <section id="main-banner-section" class="header-space">
             <ul id="main-banner" class="list-unstyled">
-                <li>
+                <li class="banner">
                     <a href="#">
                         <img src="./MC/images/Main Banner@2x.png" alt="Billboard" />
                     </a>
                 </li>
-                <li>
+                <li class="banner">
                     <a href="#">
                         <img src="./MC/images/Main Banner@2x.png" alt="Billboard" />
                     </a>
                 </li>
-                <li>
+                <li class="banner">
                     <a href="#">
                         <img src="./MC/images/Main Banner@2x.png" alt="Billboard" />
                     </a>
                 </li>
-                <li>
+                <li class="banner">
                     <a href="#">
                         <img src="./MC/images/Main Banner@2x.png" alt="Billboard" />
                     </a>
                 </li>
-                <li>
+                <li class="banner">
                     <a href="#">
                         <img src="./MC/images/Main Banner@2x.png" alt="Billboard" />
                     </a>
                 </li>
             </ul>
 
-        </section> -->
+        </section>
 
         <section id="tactical-banner-section">
             <div class="container centered">
@@ -1269,6 +1281,8 @@
 
             <section class="title_section">
                 iSTYLE
+                <div class="chevron-bottom">
+                </div>
             </section>
 
         </div>
@@ -1287,6 +1301,18 @@
     <script src="./MC/js/libs_ui/jquery-3.4.1.min.js"></script>
     <script src="./MC/js/libs_ui/slick.min.js"></script>
     <script>
+        //function to add bg color to header
+
+        var myNav = document.getElementById('main-header');
+        window.onscroll = function () {
+            "use strict";
+            if (document.body.scrollTop >= 10 || document.documentElement.scrollTop >= 10) {
+                myNav.classList.add("scrolled");
+            } else {
+                myNav.classList.remove("scrolled");
+            }
+        };
+
         function popup_Layer3(el) {
             var temp = $('#' + el);
             var el_dimmed = $('.wrap').prepend('<div class="laydim"></div>');
@@ -1306,7 +1332,14 @@
             $('#mall-in-mall-menu').slick('setPosition');
         }
 
+        $(document).on('click', '.title_section', function () {
+            $('.laydim').remove();
+            $('html,body').removeClass('no-scroll');
 
+            if ($('.poplay_type2_1').length) {
+                popup_Layer_close3('bottom-nav-slide');
+            }
+        });
 
         function popup_Layer_close3(el) {
             var temp = $('#' + el);
@@ -1323,11 +1356,12 @@
                 speed: 700,
                 infinite: true,
                 swipe: true,
+                autoplay: true,
                 //  infinite: true,
                 swipeToSlide: true,
                 centerMode: true,
-                variableWidth: true,
-                variableHeight: true,
+                slidesToShow: 1,
+                centerPadding: "6%"
             });
 
             $('#brand-mall-menu').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
