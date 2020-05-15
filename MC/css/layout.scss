@@ -247,7 +247,7 @@ body.no-scroll .laydim {
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 10;
+    z-index: 90;
 }
 
 .no-scroll {
@@ -316,13 +316,18 @@ body.no-scroll .laydim {
 
 #main-header {
     position: fixed;
-    z-index: 99;
+    z-index: 40;
     width: 100%;
+    background-color: transparent;
+    &.scrolled{
+        background-color: white !important;
+        transition: background-color 200ms linear;
+    }
 
     .nav-header {
         display: flex;
         align-items: center;
-        z-index: 99;
+        z-index: 40;
         padding: 15px;
     }
 
@@ -1024,7 +1029,7 @@ body.no-scroll .laydim {
 //bottom navigation styling
 .bottom-nav {
     width: 100%;
-    z-index: 1;
+    z-index: 40;
     background: white;
     position: fixed;
     bottom: 0;
@@ -1230,7 +1235,7 @@ body.no-scroll .laydim {
         width: 100vw;
         border-top-left-radius: 100px;
         border-top-right-radius: 100px;
-        padding: 20px 0;
+        padding: 10px 0;
         text-align: center;
         background: white;
         font-weight: 600;

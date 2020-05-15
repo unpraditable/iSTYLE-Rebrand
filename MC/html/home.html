@@ -12,11 +12,12 @@
 <body>
 
     <div class="wrap">
-        <header id="main-header">
+        <header id="main-header" class="scrolled">
             <nav class="nav-header">
                 <div class="header-search-wrapper">
                     <i class="search-icon"></i>
-                    <input id="istyle-search" class="search" type="text" name="search" autocomplete="off" placeholder="Mau belanja apa di iStyle?"/>
+                    <input id="istyle-search" class="search" type="text" name="search" autocomplete="off"
+                        placeholder="Mau belanja apa di iStyle?" />
                 </div>
                 <div class="icons-wrapper">
                     <span class="btn-wishlist"></span>
@@ -1300,6 +1301,18 @@
     <script src="../js/libs_ui/jquery-3.4.1.min.js"></script>
     <script src="../js/libs_ui/slick.min.js"></script>
     <script>
+        //function to add bg color to header
+
+        var myNav = document.getElementById('main-header');
+        window.onscroll = function () {
+            "use strict";
+            if (document.body.scrollTop >= 10 || document.documentElement.scrollTop >= 10) {
+                myNav.classList.add("scrolled");
+            } else {
+                myNav.classList.remove("scrolled");
+            }
+        };
+
         function popup_Layer3(el) {
             var temp = $('#' + el);
             var el_dimmed = $('.wrap').prepend('<div class="laydim"></div>');
