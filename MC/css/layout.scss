@@ -502,6 +502,38 @@ body.no-scroll .laydim {
             }
         }
 
+        .slick-dots {
+            li{
+                width: auto;
+                height: auto;
+                button{
+                    font-size: 0;
+                    line-height: 0;
+                    display: block;
+                    width: 7px;
+                    height: 7px;
+                    padding: 2px;
+                    cursor: pointer;
+                    color: transparent;
+                    border: 0;
+                    outline: none;
+                    border-radius: 100%;
+                    background: #EAEAEA;
+                    &:before{
+                        content: "";
+                        width: 7px;
+                        height: 7px;
+                    }
+                }
+                &.slick-active{
+                    button{
+                        background: #FDCA3D;
+                    }
+                }
+            }
+            
+        }
+
         /* slide when not active/center*/
         .slick-slide,
         .slick-slide[aria-hidden="true"]:not(.slick-cloned)~.slick-cloned[aria-hidden="true"] {
