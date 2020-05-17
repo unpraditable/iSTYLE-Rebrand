@@ -111,7 +111,7 @@ $(document).ready(function () {
         let target = $(this).attr('href');
         $(this).parent().siblings('.active').removeClass('active');
         $(this).parent().addClass('active');
-        $('.tab-content.in').removeClass('in');
+        $(this).parents(".nav-tab").siblings('.tab-content.in').removeClass('in');
         $(target).addClass('in');
     });
 
