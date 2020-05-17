@@ -319,7 +319,8 @@ body.no-scroll .laydim {
     z-index: 40;
     width: 100%;
     background-color: transparent;
-    &.scrolled{
+
+    &.scrolled {
         background-color: white !important;
         transition: background-color 200ms linear;
     }
@@ -354,49 +355,57 @@ body.no-scroll .laydim {
             }
 
             &#istyle-search:placeholder-shown {
-                &:placeholder-shown{
+                &:placeholder-shown {
                     background-image: url(../icons/iStyle\ Logo@2x.png);
                     background-repeat: no-repeat;
                     background-size: 43px 17px;
                     height: 16px;
+
                     &::-webkit-input-placeholder {
                         /* WebKit browsers */
-                         color: transparent;
+                        color: transparent;
                     }
-                     &:-moz-placeholder {
+
+                    &:-moz-placeholder {
                         /* Mozilla Firefox 4 to 18 */
-                         color: transparent;
+                        color: transparent;
                     }
-                     &::-moz-placeholder {
+
+                    &::-moz-placeholder {
                         /* Mozilla Firefox 19+ */
-                         color: transparent;
+                        color: transparent;
                     }
-                     &:-ms-input-placeholder {
+
+                    &:-ms-input-placeholder {
                         /* Internet Explorer 10+ */
-                         color: transparent;
+                        color: transparent;
                     }
                 }
 
-                &:focus{
+                &:focus {
                     &::-webkit-input-placeholder {
                         /* WebKit browsers */
-                         color: $lightText;
+                        color: $lightText;
                     }
-                     &:-moz-placeholder {
+
+                    &:-moz-placeholder {
                         /* Mozilla Firefox 4 to 18 */
                         color: $lightText;
                     }
-                     &::-moz-placeholder {
+
+                    &::-moz-placeholder {
                         /* Mozilla Firefox 19+ */
                         color: $lightText;
                     }
-                     &:-ms-input-placeholder {
+
+                    &:-ms-input-placeholder {
                         /* Internet Explorer 10+ */
                         color: $lightText;
                     }
                 }
-                
-                &:focus,&:not(:placeholder-shown){
+
+                &:focus,
+                &:not(:placeholder-shown) {
                     background-image: none;
                 }
             }
@@ -479,13 +488,27 @@ body.no-scroll .laydim {
     margin: 0;
     padding: 0;
 
+
     .slick-track {
         display: flex !important;
         align-items: center;
     }
 
+
     #main-banner {
         margin-top: 0;
+        visibility: hidden;
+
+        &.slick-initialized {
+            visibility: visible;
+        }
+
+        display: flex;
+        flex-wrap: nowrap;
+
+        li {
+            flex: 0 0 auto;
+        }
 
         .banner {
             display: inline-block;
@@ -503,10 +526,11 @@ body.no-scroll .laydim {
         }
 
         .slick-dots {
-            li{
+            li {
                 width: auto;
                 height: auto;
-                button{
+
+                button {
                     font-size: 0;
                     line-height: 0;
                     display: block;
@@ -519,19 +543,21 @@ body.no-scroll .laydim {
                     outline: none;
                     border-radius: 100%;
                     background: #EAEAEA;
-                    &:before{
+
+                    &:before {
                         content: "";
                         width: 7px;
                         height: 7px;
                     }
                 }
-                &.slick-active{
-                    button{
+
+                &.slick-active {
+                    button {
                         background: #FDCA3D;
                     }
                 }
             }
-            
+
         }
 
         /* slide when not active/center*/
@@ -670,11 +696,45 @@ body.no-scroll .laydim {
 
             .prd-img {
                 min-height: 133px;
+                position: relative;
 
                 img {
                     border-radius: 10px;
                     max-width: 100%;
                     border: 1px solid #E5E5E5;
+                }
+
+                .m_logo {
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    width: 35px;
+                    height: 12.5px;
+
+                    &.kino {
+                        height: 47px;
+                        width: 10px;
+                        left: 5px;
+                    }
+
+                    img {
+                        border-radius: 0;
+                        border: 0;
+                        width: 100%;
+                    }
+                }
+
+                .ico_logo {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    width: 35px;
+                    height: 35px;
+
+                    img {
+                        border: none;
+                        width: 100%;
+                    }
                 }
             }
 
@@ -832,13 +892,19 @@ body.no-scroll .laydim {
     }
 }
 
+.tab-content{
+    &.in{
+        display: block;
+    }
+    display: none;
+}
+
 //navigation tab styling
 .nav-tab {
     li {
         margin-right: 10px;
 
         a {
-            box-sizing: border-box;
             display: -webkit-box;
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
@@ -856,6 +922,7 @@ body.no-scroll .laydim {
             font-weight: 600;
             font-family: $Roboto;
             font-size: 14px;
+            box-sizing: border-box;
         }
 
         &.active {
@@ -1238,26 +1305,23 @@ body.no-scroll .laydim {
 
         }
 
-        /* slide when not active/center*/
-        .slick-slide,
-        .slick-slide[aria-hidden="true"]:not(.slick-cloned)~.slick-cloned[aria-hidden="true"] {
+        .slick-slide {
             transform: scale(0.7, 0.7);
             transition: transform 0.3s;
-        }
 
-        /* slide when active/center */
-        .slick-center,
-        .slick-slide[aria-hidden="true"]:not([tabindex="-1"])+.slick-cloned[aria-hidden="true"] {
-            transform: scale(0.9, 0.9);
+            &.slick-center {
+                transform: scale(0.9, 0.9);
 
-            img {
-                border: 5px solid white;
+                img {
+                    border: 5px solid white;
+                }
             }
+
         }
 
-        .slide {
-            padding: 0 10px;
-        }
+        // .slide {
+        //     padding: 0 10px;
+        // }
 
     }
 
